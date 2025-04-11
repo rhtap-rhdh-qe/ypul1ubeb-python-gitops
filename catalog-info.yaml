@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ypul1ubeb-python-gitops
+  description: This is GitOps manifest for ypul1ubeb-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ypul1ubeb-python
+    backstage.io/kubernetes-id: ypul1ubeb-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ypul1ubeb-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ypul1ubeb-python
